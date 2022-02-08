@@ -1,6 +1,6 @@
 # API de reservas de salas 
 ### Autor: 
-[Dheyverson Carlos](https://github.com/dheyverson)
+[Dheyverson Carlos](https://github.com/dheyversoncarlos)
 
 ## Desrição:
 
