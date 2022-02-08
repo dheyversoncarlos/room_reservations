@@ -1,7 +1,16 @@
 # API de reservas de salas 
 ### Autor: Dheyverson Carlos [https://github.com/dheyverson]
 
-## Como rodar o projeto ?
+## Desrição:
+
+-   Sistema de reservas de salas
+
+## Pré-requisitos:
+
+- [Docker e docker-compose](https://www.docker.com/get-started)
+- NodeJS v14.17.6 ou superior
+
+## Como executar o projeto ?
 
 ### Passo 1 - Configurando 
 
@@ -49,8 +58,7 @@
 
 - No navegador de sua preferencia acesse :
         
-        http://HOST_API_DEFINIDO_NO_ARQUIVO_ENV:PORT_API_DEFINIDO_NO_ARQUIVO_ENV/api-docs
-        example: [http://localhost:3000/api-docs]
+    [http://HOST_API:PORT_API/api-docs](http://localhost:3000/api-docs)
 
         *** É possível acessar apenas a rota auth sem autenticação. Após obter um token válido no métode auth, utilize o token para as demais solicitações ***
     
