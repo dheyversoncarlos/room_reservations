@@ -100,7 +100,7 @@
     - Cada usuário deve conter nome, e-mail e avatar.
     - O cadastro dos usuários deve ser feito manualmente no banco de dados.
     - Para o usuário acessar a aplicação é necessário estar autenticado através de e-mail e senha.
-    - Para autenticação do usuário ser utilizado o [http://www.passportjs.org] ou algum semelhante.
+    - Para autenticação do usuário ser utilizado o [passportjs](http://www.passportjs.org) ou algum semelhante.
 
 4. 
     * Requisitos
