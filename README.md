@@ -116,7 +116,7 @@
         - Seu código não precisa estar pronto para a produção, embora você deva tomar decisões de projeto, trazer soluções para atender os requisitos e ter uma base para que seja possível escalar a aplicação.
     
 5. Entrega e implementação
-    - Fornece acesso ao código por meio do [https://github.com] ou ferramenta semelhante; 
+    - Fornece acesso ao código por meio do [github.com](https://github.com) ou ferramenta semelhante; 
     - Forneça um README com instruções breves de configuração da aplicação uma visão geral do backend implementado.
     
 6. Também será analisado
@@ -126,8 +126,3 @@
     
 7. Prazo
     - O prazo máximo para entrega é de 3 dias, a partir da data de recebimento destas instruções.
-    
-8. Dúvidas
-    - Caso tenha alguma dúvida entre em contato pelo e-mail: [hendrik@clina.care] ou [caio@clina.care] com o assunto “Clina - Desafio Técnico Backend - Dúvida”
-  
- 
