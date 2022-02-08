@@ -67,7 +67,7 @@
 
         *** Utilize a rota [POST: /users] para cadastrar um usuário com o hash de senha e assim obter êxito na autenticação ***
 
-=========================REFERÊNCIA==================================
+===========================================================REFERÊNCIA===============================================================
 
 
 # Desafio Técnico - Backend Developer – NodeJs
