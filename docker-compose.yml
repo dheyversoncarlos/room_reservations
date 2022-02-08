@@ -1,0 +1,12 @@
+version: '3.1'
+services:
+  database:
+    container_name: room_reservation_db
+    restart: always
+    image: postgres:13.4
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    ports:
+      - "${PORT_DB}:${PORT_DB}"

@@ -1,0 +1,255 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Room Schedulling",
+    "description": "This api allows scheduling and booking rooms",
+    "version": "0.0.1",
+    "contact": {
+      "email": "dheyverson.carlos@gmail.com"
+    }
+  },
+  "paths": {
+    "/users": {
+      "post": {
+        "tags": ["Register"],
+        "summary": "User Create With hash",
+        "description": "Use this resource to create an user with valid hash password",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/CreateBody"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Return the user created"
+          },
+          "406": {
+            "description": "Name, email and password is required"
+          },
+          "422": {
+            "description": "Email already exist"
+          }
+        }
+      }
+    },
+    "/auth": {
+      "post": {
+        "tags": ["Auth"],
+        "summary": "User authentication",
+        "description": "Use this resource to authenticate an user and get a valid token",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/AuthBody"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return the generated token JWT"
+          },
+          "401": {
+            "description": "Authentication failed with body data"
+          }
+        }
+      }
+    },
+    "/": {
+      "get": {
+        "tags": ["Entry"],
+        "summary": "Server status",
+        "description": "Use this resource to verify the status of application",
+        "parameters": [],
+        "responses": {
+          "200": {"description": "Empty body for success"}
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/room": {
+      "get": {
+        "tags": ["Room"],
+        "summary": "List Rooms",
+        "description": "Use this resource to returns a list of rooms with availability for the day",
+        "parameters": [
+          {
+            "name": "date",
+            "in": "query",
+            "required": false,
+            "description": "Date of filter",
+            "schema": {
+              "type": "string"
+            },
+            "style": "simple"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Rooms available list"
+          },
+          "406": {
+            "description": "Mandatory parameter not informed"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/room/{id}": {
+      "get": {
+        "tags": ["Room"],
+        "summary": "Details of room",
+        "description": "Use this resource to returns the details of a specific room",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "Room Id",
+            "schema": {
+              "type": "string"
+            },
+            "style": "simple"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Details of room by id"
+          },
+          "406": {
+            "description": "Id not found"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/schedule/{roomId}": {
+      "get": {
+        "tags": ["Schedule"],
+        "summary": "List reservasions available",
+        "description": "Use this resource to get available reservations for a room;",
+        "parameters": [
+          {
+            "name": "roomId",
+            "in": "path",
+            "description": "Room id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "style": "simple"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Reservations available of specific room"
+          },
+          "406": {
+            "description": "Id not found"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/schedule": {
+      "post": {
+        "tags": ["Schedule"],
+        "summary": "Create a new schedule",
+        "description": "Use this resource to create a new reservation",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/CreateSchedule"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created schedule"
+          },
+          "400": {
+            "description": "Values on request doesn't match with a register on database"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "Bearer": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "definitions":{
+    "AuthBody": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    "CreateBody": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    "CreateSchedule": {
+      "type": "object",
+      "properties": {
+        "room_id": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string"
+        },
+        "period": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
