@@ -3,12 +3,12 @@
 
 ## Desrição:
 
--   Sistema de reservas de salas
+    Sistema de reservas de salas
 
 ## Pré-requisitos:
 
 - [Docker e docker-compose](https://www.docker.com/get-started)
-- NodeJS v14.17.6 ou superior
+- [NodeJS v14.17.6 ou superior](https://nodejs.org/en/blog/release/v14.18.2/)
 
 ## Como executar o projeto ?
 
