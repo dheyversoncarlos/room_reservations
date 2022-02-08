@@ -24,31 +24,39 @@
 - Executar na pasta raiz do projeto os comandos :
     
     1. Instalando as dependencias node
+             
              $ yarn install  ou  npm install 
 
     2. Construindo o banco de dados com TypeORM
+            
             $ yarn typeorm migration:run   ou   npm run typeorm migration:run
 
     3. Cadastrando salas manualmente no banco de dados
+            
             Neste passo, utilize um SGBD de sua preferência para se conectar ao banco de dados
+            
             utilize as credenciais definidas no arquivo .env
+            
             Execute o script scripts_sql/initdb.sql para cadastrar as salas de teste
 
             ** Personalize conforme queira o SQL acima, para visualizar salas diferentes na api **
     
     4. Executando a api em modo *DEV*
+            
             $ yarn dev   ou   npm run dev
 
 ### Passo 4 - Acessando a documentação 
 
 - No navegador de sua preferencia acesse :
+        
         http://HOST_API_DEFINIDO_NO_ARQUIVO_ENV:PORT_API_DEFINIDO_NO_ARQUIVO_ENV/api-docs
+        example: [http://localhost:3000/api-docs]
 
-    *** É possível acessar apenas a rota auth sem autenticação. Após obter um token válido no métode auth, utilize o token para as demais solicitações ***
+        *** É possível acessar apenas a rota auth sem autenticação. Após obter um token válido no métode auth, utilize o token para as demais solicitações ***
     
-    *** Para testar cada serviço disponibilizado pela api, pode-se utilizar o ambiente disponibilizado no host da documentação ou softwares de terceiros como Postman por exemplo. ***
+        *** Para testar cada serviço disponibilizado pela api, pode-se utilizar o ambiente disponibilizado no host da documentação ou softwares de terceiros como Postman por exemplo. ***
 
-    *** Utilize a rota [POST: /users] para cadastrar um usuário com o hash de senha e assim obter êxito na autenticação ***
+        *** Utilize a rota [POST: /users] para cadastrar um usuário com o hash de senha e assim obter êxito na autenticação ***
 
 =========================REFERÊNCIA==================================
 
